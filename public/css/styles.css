@@ -10,7 +10,7 @@ html {
     font-size: 16px;
 }
 
-input {
+input, select {
     font-size: 14px;
 }
 
@@ -31,7 +31,7 @@ label {
     color: #777;
 }
 
-input {
+input, select {
     border: 1px solid #eeeeee;
     padding: 12px;
     outline: none;
@@ -78,7 +78,7 @@ button:disabled {
     width: 100%;
 }
 
-.centered-form input {
+.centered-form input, .centered-form select {
     margin-bottom: 16px;
     width: 100%;
 }
@@ -148,7 +148,7 @@ button:disabled {
     margin-right: 16px;
 }
 
-.compose input {
+.compose input, .compose select {
     border: 1px solid #eeeeee;
     width: 100%;
     padding: 12px;
@@ -180,4 +180,20 @@ button:disabled {
     list-style-type: none;
     font-weight: 300;
     padding: 12px 24px 0 24px;
+}
+
+/* New Features */
+.centered-form__box {
+    width: 500px;
+    display: flex;
+    padding: 0;
+}
+
+.centered-form__form-box {
+    padding: 24px;
+    flex: 1;
+}
+
+.list-fieldset {
+    border: none;
 }

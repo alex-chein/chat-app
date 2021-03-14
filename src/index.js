@@ -4,7 +4,7 @@ const express = require('express');
 const socketIO = require('socket.io');
 const Filter = require('bad-words');
 const { generateMessage, generateLocationMessage } = require('./utils/messages');
-const { addUser, removeUser, getUser, getUsersInRoom } = require('./utils/users');
+const { addUser, removeUser, getUser, getUsersInRoom, getRooms } = require('./utils/users');
 
 const publicDirectoryPath = path.join(__dirname, '..', 'public');
 const port = process.env.PORT || 3000;
@@ -34,6 +34,10 @@ io.on('connection', (socket) => {
         });
 
         callback();
+    });
+
+    socket.on('getRooms', (callback) => {
+        callback(getRooms());
     });
 
     socket.on('sendMessage', (message, callback) => {

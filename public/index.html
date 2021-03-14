@@ -6,20 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
     <title>Chat App</title>
-    <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div class="centered-form">
-        <div class="centered-form__box">
-            <h1>Join</h1>
-            <form action="/chat.html" name="joinForm">
-                <label for="username">Display Name</label>
-                <input type="text" name="username" placeholder="Display Name" required>
-                <label for="room">Room</label>
-                <input type="text" name="room" placeholder="Room" required>
-                <button type="submit">Join</button>
-            </form>
-        </div>
-    </div>
+    <section class="centered-form">
+        <main class="centered-form__box">
+            <div class="centered-form__form-box">
+                <h1>Join a Room</h1>
+                <form action="/chat.html">
+                    <label for="username">Display Name</label>
+                    <input type="text" name="username" placeholder="Display Name" required>
+                    <fieldset class="list-fieldset">
+                        <label for="room">Rooms List</label>
+                        <select name="room" disabled="disabled" required></select>
+                    </fieldset>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+            <div class="centered-form__form-box">
+                <h1>Create a Room</h1>
+                <form action="/chat.html">
+                    <label for="username">Display Name</label>
+                    <input type="text" name="username" placeholder="Display Name" required>
+                    <label for="room">Room</label>
+                    <input type="text" name="room" placeholder="Room" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <script type="text/html" id="list-template">
+        <label for="room">Rooms List</label>
+        <select name="room" required>
+            {{#rooms}}
+                <option value="{{.}}">{{.}}</option>
+            {{/rooms}}
+        </select>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>
