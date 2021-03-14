@@ -14,4 +14,5 @@ socket.emit('getRooms', (rooms) => {
     });
 
     $listForm.innerHTML = html;
+    document.listForm.querySelector('[type=submit]').disabled = false;
 });

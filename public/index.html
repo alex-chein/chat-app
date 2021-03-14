@@ -11,19 +11,21 @@
 <body>
     <section class="centered-form">
         <main class="centered-form__box">
-            <div class="centered-form__form-box">
+            <div class="centered-form__form-box form-box--left">
                 <h1>Join a Room</h1>
-                <form action="/chat.html">
+                <form action="/chat.html" name="listForm">
                     <label for="username">Display Name</label>
                     <input type="text" name="username" placeholder="Display Name" required>
                     <fieldset class="list-fieldset">
                         <label for="room">Rooms List</label>
-                        <select name="room" disabled="disabled" required></select>
+                        <select name="room" disabled="disabled" required>
+                            <option>No Rooms Available</option>
+                        </select>
                     </fieldset>
-                    <button type="submit">Join</button>
+                    <button type="submit" disabled="disabled">Join</button>
                 </form>
             </div>
-            <div class="centered-form__form-box">
+            <div class="centered-form__form-box form-box--right">
                 <h1>Create a Room</h1>
                 <form action="/chat.html">
                     <label for="username">Display Name</label>
